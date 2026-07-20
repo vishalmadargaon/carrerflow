@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Compass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard"><span class="brand-mark">⌁</span>career<span>compass</span></a>
+      <nav>
+        <button class="nav-link active" data-page="dashboard"><i>⌂</i> Dashboard</button>
+        <p class="nav-label">JOB SEARCH</p>
+        <button class="nav-link" data-page="tracker"><i>▦</i> Job Tracker</button>
+        <button class="nav-link" data-page="resumes"><i>▤</i> Resume Builder</button>
+        <button class="nav-link" data-page="materials"><i>✦</i> Application Materials</button>
+        <p class="nav-label">NETWORKING</p>
+        <button class="nav-link" data-page="contacts"><i>♙</i> Contacts</button>
+        <button class="nav-link" data-page="linkedin"><i>in</i> LinkedIn Optimizer</button>
+        <p class="nav-label">AI TOOLBOX</p>
+        <button class="nav-link" data-page="interview"><i>◉</i> Mock Interviews</button>
+        <button class="nav-link" data-page="tools"><i>✧</i> AI Tools</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="upgrade"><span>✦</span><div><b>Unlock your potential</b><small>Try Premium free for 7 days</small></div></div><button class="profile"><span>AS</span><b>Alex Smith</b><em>⌄</em></button></div>
+    </aside>
+    <main>
+      <header><button id="menu" aria-label="Open menu">☰</button><div class="crumb">Home <span>/</span> <b id="page-title">Dashboard</b></div><div class="header-actions"><button class="icon-btn">⌕</button><button class="icon-btn notification">♧</button><button class="help">?</button></div></header>
+      <section id="dashboard" class="page active-page">
+        <div class="welcome"><div><p class="eyebrow">MONDAY, JULY 20</p><h1>Good morning, Alex <span>👋</span></h1><p>Here’s your personalized plan to land your next great role.</p></div><button class="primary" data-go="tracker">+ Add a job</button></div>
+        <div class="progress-card"><div class="progress-title"><div><h2>Your job search action plan</h2><p>Complete these steps to set yourself up for success.</p></div><div class="percentage"><b id="done-count">0</b><span>/ 4 completed</span><strong id="percent">0%</strong></div></div><div class="bar"><span id="progress-bar"></span></div><div id="task-list" class="tasks"></div></div>
+        <div class="resume-banner"><div class="sparkle">✦</div><div><p class="eyebrow">AI-POWERED RESUME</p><h2>Make every application count</h2><p>Build a tailored, ATS-friendly resume in minutes—not hours.</p></div><button class="white-btn" data-go="resumes">Optimize my resume <span>→</span></button><div class="resume-lines"><i></i><i></i><i></i><i></i></div></div>
+        <div class="section-heading"><div><h2>Keep your momentum going</h2><p>Tools built to make your job search easier.</p></div></div>
+        <div class="tool-grid"><article><div class="tool-icon blue">▤</div><h3>Build your base resume</h3><p>Create a strong foundation you can tailor for every opportunity.</p><button data-go="resumes">Create resume →</button></article><article><div class="tool-icon violet">◉</div><h3>Practice with AI</h3><p>Feel confident with real-time mock interview feedback.</p><button data-go="interview">Start practicing →</button></article><article><div class="tool-icon orange">♙</div><h3>Grow your network</h3><p>Track conversations and nurture meaningful connections.</p><button data-go="contacts">Add a contact →</button></article></div>
+      </section>
+      <section id="tracker" class="page">
+        <div class="page-top"><div><h1>Job Tracker</h1><p>Organize every opportunity in one place.</p></div><button class="primary" id="add-job">+ Add a job</button></div>
+        <div class="tracker-tools"><label>⌕ <input id="job-search" placeholder="Search jobs" /></label><button id="filter-btn">☷ Filter</button><button id="clear-jobs">Clear all</button></div>
+        <div id="board" class="board"></div>
+      </section>
+      <section id="resumes" class="page resume-page">
+        <div class="page-top"><div><h1>Resume Builder</h1><p>Tailor your existing resume for a specific job description.</p></div></div>
+        <div class="tailor-card"><div class="tailor-intro"><span class="large-icon">✦</span><div><h2>Tailor your resume</h2><p>Paste your resume and the job description to create an ATS-friendly tailored draft.</p></div></div><div class="tailor-inputs"><label>Your existing resume<textarea id="resume-input" placeholder="Paste your resume text here..." spellcheck="true"></textarea></label><label>Job description<textarea id="jd-input" placeholder="Paste the complete job description here..." spellcheck="true"></textarea></label></div><button class="primary" id="tailor-resume">✦ Tailor my resume</button></div>
+        <section id="tailor-results" class="tailor-results" hidden><div class="results-head"><div><p class="eyebrow">TAILORED DRAFT</p><h2>Ready for review</h2></div><button class="primary" id="download-resume">↓ Download PDF</button></div><div class="match-row"><div><span id="match-score">0</span><small>Match score</small></div><p id="match-copy"></p></div><div class="keyword-box"><h3>Keywords from this job description</h3><div id="keywords"></div></div><label class="draft-label">Your tailored resume<textarea id="tailored-output" spellcheck="true"></textarea></label></section>
+      </section>
+      <section id="contacts" class="page simple-page"><span class="large-icon">♙</span><h1>Build your professional network</h1><p>Keep track of people, conversations, and follow-ups.</p><button class="primary" id="new-contact">Add contact</button><div id="contact-list" class="contact-list"></div></section>
+      <section id="materials" class="page simple-page"><span class="large-icon">✦</span><h1>Application materials</h1><p>Generate polished cover letters and organize application documents.</p><button class="primary">Create a cover letter</button></section>
+      <section id="linkedin" class="page simple-page"><span class="large-icon">in</span><h1>Optimize your LinkedIn profile</h1><p>Get actionable suggestions to make your profile recruiter-ready.</p><button class="primary">Analyze my profile</button></section>
+      <section id="interview" class="page simple-page"><span class="large-icon">◉</span><h1>Practice for your next interview</h1><p>Rehearse your answers and receive AI-powered feedback.</p><button class="primary">Start a mock interview</button></section>
+      <section id="tools" class="page simple-page"><span class="large-icon">✧</span><h1>AI job-search toolbox</h1><p>Helpful AI workflows for every stage of your search.</p></section>
+    </main>
+    <dialog id="job-dialog"><form method="dialog" id="job-form"><div class="modal-title"><h2>Add a job</h2><button value="cancel">×</button></div><label>Job title<input name="title" required placeholder="e.g. Product Designer" /></label><label>Company<input name="company" required placeholder="e.g. Acme Inc." /></label><label>Stage<select name="stage"><option>Saved</option><option>Applied</option><option>Interviewing</option><option>Offer</option></select></label><button class="primary" value="default">Save job</button></form></dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
