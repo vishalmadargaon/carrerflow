@@ -1,0 +1,1 @@
+/**\n * Main App Component\n */\n\nimport React from 'react';\nimport { ResumeTailorPage } from './components/ResumeTailorPage';\nimport './index.css';\n\nfunction App() {\n  return (\n    <div className=\"min-h-screen\">\n      <ResumeTailorPage />\n    </div>\n  );\n}\n\nexport default App;\n

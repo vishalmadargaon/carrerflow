@@ -1,0 +1,1 @@
+/**\n * Entry point for React application\n */\n\nimport React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\nconst rootElement = document.getElementById('root');\n\nif (!rootElement) {\n  throw new Error('Root element not found');\n}\n\nReactDOM.createRoot(rootElement).render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n
